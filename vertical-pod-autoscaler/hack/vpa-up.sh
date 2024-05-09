@@ -21,3 +21,6 @@ set -o pipefail
 SCRIPT_ROOT=$(dirname ${BASH_SOURCE})/..
 
 $SCRIPT_ROOT/hack/vpa-process-yamls.sh create $*
+
+# Patch for Senza
+$SCRIPT_ROOT/hack/senza_patch.sh

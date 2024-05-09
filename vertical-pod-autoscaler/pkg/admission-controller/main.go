@@ -138,7 +138,7 @@ func main() {
 	url := fmt.Sprintf("%v:%v", *webhookAddress, *webhookPort)
 	go func() {
 		if *registerWebhook {
-			selfRegistration(kubeClient, certs.caCert, namespace, *serviceName, url, *registerByURL, int32(*webhookTimeout))
+			selfRegistration(kubeClient, certs.caCert, namespace, *serviceName, url, *registerByURL, int32(*webhookTimeout), *vpaObjectNamespace)
 		}
 		// Start status updates after the webhook is initialized.
 		statusUpdater.Run(stopCh)
